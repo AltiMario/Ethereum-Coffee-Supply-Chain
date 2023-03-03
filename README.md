@@ -8,6 +8,8 @@ A basic Ethereum DApp demonstrating the coffee supply chain from the farmer's ha
 ![Sequence Diagram](./UML/Sequence%20Diagram.drawio.png)
 - State Diagram
 ![State Diagram](./UML/State%20Diagram.drawio.png)
+- Class Diagram
+![Class Diagram](./UML/classDiagram.svg)
 
 ## Libraries Used
 - **Truffle v5.7.8 (core: 5.7.8)**
