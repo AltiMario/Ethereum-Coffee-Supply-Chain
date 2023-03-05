@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 // Define a contract 'Supplychain'
 contract SupplyChain {
@@ -85,7 +86,7 @@ contract SupplyChain {
     _;
     uint _price = items[_upc].productPrice;
     uint amountToReturn = msg.value - _price;
-    items[_upc].consumerID.transfer(amountToReturn);
+    payable(items[_upc].consumerID).transfer(amountToReturn);
   }
 
   // Define a modifier that checks if an item.state of a upc is Harvested
@@ -139,21 +140,21 @@ contract SupplyChain {
   // In the constructor set 'owner' to the address that instantiated the contract
   // and set 'sku' to 1
   // and set 'upc' to 1
-  constructor() public payable {
+  constructor() payable {
     owner = msg.sender;
     sku = 1;
     upc = 1;
   }
 
   // Define a function 'kill' if required
-  function kill() public {
-    if (msg.sender == owner) {
-      selfdestruct(owner);
-    }
-  }
+  // function kill() public {
+  //   if (msg.sender == owner) {
+  //     selfdestruct(owner);
+  //   }
+  // }
 
   // Define a function 'harvestItem' that allows a farmer to mark an item 'Harvested'
-  function harvestItem(uint _upc, address _originFarmerID, string _originFarmName, string _originFarmInformation, string  _originFarmLatitude, string  _originFarmLongitude, string  _productNotes) public 
+  function harvestItem(uint _upc, address _originFarmerID, string memory _originFarmName, string memory _originFarmInformation, string memory _originFarmLatitude, string memory _originFarmLongitude, string memory _productNotes) public 
   {
     // Add the new item as part of Harvest
     
@@ -269,10 +270,10 @@ contract SupplyChain {
   uint    itemUPC,
   address ownerID,
   address originFarmerID,
-  string  originFarmName,
-  string  originFarmInformation,
-  string  originFarmLatitude,
-  string  originFarmLongitude
+  string  memory originFarmName,
+  string  memory originFarmInformation,
+  string  memory originFarmLatitude,
+  string  memory originFarmLongitude
   ) 
   {
   // Assign values to the 8 parameters
@@ -297,7 +298,7 @@ contract SupplyChain {
   uint    itemSKU,
   uint    itemUPC,
   uint    productID,
-  string  productNotes,
+  string  memory productNotes,
   uint    productPrice,
   uint    itemState,
   address distributorID,
