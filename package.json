@@ -1,0 +1,17 @@
+{
+  "name": "supply-chain-E",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mario Altimari <altimario@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "2.6.1",
+    "truffle": "^5.7.9"
+  }
+}
