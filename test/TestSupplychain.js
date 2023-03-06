@@ -42,6 +42,9 @@ contract('SupplyChain', async (accounts) => {
     before(async () => {
         supplyChain = await SupplyChain.deployed();
         await supplyChain.addFarmer(originFarmerID);
+        await supplyChain.addDistributor(distributorID);
+        await supplyChain.addRetailer(retailerID);
+        await supplyChain.addConsumer(consumerID);
     });
 
     // 1st Test
