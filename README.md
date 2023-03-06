@@ -17,7 +17,7 @@ A basic Ethereum DApp demonstrating the coffee supply chain from the farmer's ha
 
 - **Truffle v5.7.9 (core: 5.7.9)**
 - **Ganache v7.7.5**
-- **Solidity - 0.8.19 (solc-js)**
+- **Solidity - 0.8.17 (solc-js)**
 - **Node v18.14.2**
 - **Web3.js v1.8.2**
 - **sol2uml 2.5.1** - _To generate solidity Class Diagram_
