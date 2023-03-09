@@ -42,8 +42,10 @@
  */
 
 require('dotenv').config();
-// const { MNEMONIC, PROJECT_ID } = process.env;
 const HDWalletProvider = require('truffle-hdwallet-provider');
+const infuraKey = "_PRIVATE_";
+const mnemonic = "_PRIVATE_";
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -88,7 +90,13 @@ module.exports = {
     //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
-    //
+    goerli: {
+      provider: () => new HDWalletProvider(mnemonic, `https://goerli.infura.io/v3/${infuraKey}`),
+      network_id: 5,
+      gas: 4465030,
+      gasPrice: 10000000000,
+      from: "0xfA86941c9C7C4a14979e693408a8724e007EB33E", 
+    },
     // Useful for private networks
     // private: {
     //   provider: () => new HDWalletProvider(MNEMONIC, `https://network.io`),
