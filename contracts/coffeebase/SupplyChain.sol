@@ -159,6 +159,7 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
 
     // Define a function 'harvestItem' that allows a farmer to mark an item 'Harvested'
     function harvestItem(uint256 _upc, address _originFarmerID, string memory _originFarmName, string memory _originFarmInformation, string memory  _originFarmLatitude, string memory _originFarmLongitude, string memory  _productNotes) public 
+        onlyFarmer
     {
         // Add the new item as part of Harvest
         Item memory item;
@@ -182,10 +183,11 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
 
     // Define a function 'processtItem' that allows a farmer to mark an item 'Processed'
     function processItem(uint256 _upc) public
-      // Call modifier to check if upc has passed previous supply chain stage
-      harvested(_upc)
-      // Call modifier to verify caller of this function
-      onlyFarmer
+        // Call modifier to check if upc has passed previous supply chain stage
+        harvested(_upc)
+        // Call modifier to verify caller of this function
+        verifyCaller(items[_upc].originFarmerID)
+        onlyFarmer
     {
         // Update the appropriate fields
         items[_upc].itemState = State.Processed;
