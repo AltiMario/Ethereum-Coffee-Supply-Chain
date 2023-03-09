@@ -5,15 +5,15 @@ A basic Ethereum DApp demonstrating the coffee supply chain from the farmer's ha
 ## UML Diagrams
 
 - Activity Diagram
-![Activity Diagram](./UML/Activity%20Diagram.drawio.png)
+![Activity Diagram](./images/Activity%20Diagram.drawio.png)
 - Sequence Diagram
-![Sequence Diagram](./UML/Sequence%20Diagram.drawio.png)
+![Sequence Diagram](./images/Sequence%20Diagram.drawio.png)
 - State Diagram
-![State Diagram](./UML/State%20Diagram.drawio.png)
+![State Diagram](./images/State%20Diagram.drawio.png)
 - Class Diagram
-![Class Diagram](./UML/classDiagram.svg)
+![Class Diagram](./images/classDiagram.svg)
 
-## Libraries Used
+## Libraries
 
 - **Truffle v5.7.9 (core: 5.7.9)**
 - **Ganache v7.7.5**
@@ -22,4 +22,31 @@ A basic Ethereum DApp demonstrating the coffee supply chain from the farmer's ha
 - **Web3.js v1.8.2**
 - **sol2uml 2.5.1** - _To generate solidity Class Diagram_
 
-## IPFS not used
+## Goerli transactions
+
+[https://goerli.etherscan.io/address/0xfa86941c9c7c4a14979e693408a8724e007eb33e](https://goerli.etherscan.io/address/0xfa86941c9c7c4a14979e693408a8724e007eb33e)
+![Screenshot](./images/goerli-transactions.png)
+
+## Getting Started (locally)
+
+From root directory:
+
+1. `npm install`
+2. `npm install truffle`
+3. `npm install -s @truffle/contract`
+4. `npm install -s web3`
+5. `npm install -g ganache-cli`
+6. `./node_modules/.bin/truffle compile`
+7. `./node_modules/.bin/truffle migrate --reset`
+8. `./node_modules/.bin/truffle test`
+9. `./node_modules/.bin/truffle deploy`
+10. `npm run dev`
+
+## Deploy contracts to Goerli
+
+1. Edit `infuraKey` and `mnemonic` in `truffle-config.js`
+2. `truffle migrate --network goerli`
+
+## IPFS Deployment
+
+[https://ipfs.io/ipfs/QmV8mPAkgn9oyuSviKbyGbmkT9kjFoLmfFKB7fUsfs7NBD/ipfsc/](https://ipfs.io/ipfs/QmV8mPAkgn9oyuSviKbyGbmkT9kjFoLmfFKB7fUsfs7NBD/ipfsc/)
